@@ -1,0 +1,15 @@
+Is there a way to pull down the ports automatically to use in the bgp neighbor?
+How to specify different configs per router
+
+Use pipework to configure network stuff
+https://github.com/jpetazzo/pipework
+git clone https://github.com/jpetazzo/pipework.git
+pipework br1 $RTR1 192.168.1.1/24
+pipework br1 $RTR2 192.168.1.2/24
+
+If we spawn multiple copies of quagga want to be able to connect the routers
+ip addr add 192.168.1.254/24 dev br1
+
+Script deployment of multiple instances and create a network
+* would need to create multiple bridges for each 
+* could it be done with veth?
